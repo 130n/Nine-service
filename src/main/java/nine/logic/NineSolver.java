@@ -1,6 +1,6 @@
-package logic;
+package nine.logic;
 
-import pojo.WordList;
+import nine.pojo.WordList;
 
 import java.util.ArrayList;
 import java.util.List;

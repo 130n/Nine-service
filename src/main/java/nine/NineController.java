@@ -1,15 +1,15 @@
 package nine;
 
-import logic.NineSolver;
+import nine.logic.NineSolver;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import pojo.Nine;
-import pojo.NineDiff;
-import pojo.NineResult;
-import pojo.WordList;
+import nine.pojo.Nine;
+import nine.pojo.NineDiff;
+import nine.pojo.NineResult;
+import nine.pojo.WordList;
 
 import java.util.HashMap;
 import java.util.List;
