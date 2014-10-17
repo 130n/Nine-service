@@ -17,4 +17,8 @@ public class Nine {
         }
         this.letters = stringBuilder.toString();
     }
+
+    public String getLetters() {
+        return letters;
+    }
 }
