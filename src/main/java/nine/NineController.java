@@ -1,3 +1,5 @@
+package nine;
+
 import logic.NineSolver;
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
 import org.springframework.http.HttpStatus;
