@@ -12,16 +12,23 @@ public enum WordList {
     private List<String> wordList = new ArrayList<String>();
 
     WordList() {
-        System.out.println("CALLED");
-        File saol = new File("src/main/resources/saol.txt");
-        System.out.println("exists :" +saol.exists());
-        System.out.println(saol.getAbsolutePath());
+        File saol = new File("src/main/resources/saol_2.txt");
+        if (!saol.exists() && !saol.canRead()){
+            try {
+                throw new FileNotFoundException("bad file path");
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+        }
         BufferedReader bufferedReader;
         try {
             InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(saol), "UTF-8");
             bufferedReader = new BufferedReader(inputStreamReader);
             String s = bufferedReader.readLine();
             System.out.println(s);
+            System.out.println(s.getBytes());
+            System.out.println("à".getBytes());
+
             System.out.println(s.equals("à"));
             while (s != null) {
                 wordList.add(s);
