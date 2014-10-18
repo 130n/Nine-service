@@ -22,7 +22,7 @@ public class NineSolver {
                 for (int i = 0; i < word.length(); i++) {//loop over word
                     char ch = word.charAt(i);
 
-                    for (int e = 0; e < sb.length(); e++) {//loop over the nine per character
+                    for (int e = 0; e < sb.length(); e++) {//loop over the Nine per character
                         if (sb.charAt(e) == ch) {
                             sb.deleteCharAt(e);
                             break;

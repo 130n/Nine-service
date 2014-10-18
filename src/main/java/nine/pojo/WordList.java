@@ -25,11 +25,7 @@ public enum WordList {
             InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(saol), "UTF-8");
             bufferedReader = new BufferedReader(inputStreamReader);
             String s = bufferedReader.readLine();
-            System.out.println(s);
-            System.out.println(s.getBytes());
-            System.out.println("à".getBytes());
 
-            System.out.println(s.equals("à"));
             while (s != null) {
                 wordList.add(s);
                 s = bufferedReader.readLine();

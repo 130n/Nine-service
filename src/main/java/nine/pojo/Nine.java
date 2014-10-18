@@ -7,7 +7,7 @@ import java.util.Random;
  */
 public class Nine {
     private static final Random random = new Random();
-    private final String letters;
+    private String letters;
 
     public Nine() {
         String alphabet = "abcdefghijklmnopqrstuvwxyzåäö";

@@ -23,14 +23,23 @@ public class NineController {
 
     private final Map<String, Integer> cheatCounter = new HashMap<String, Integer>();
     /**
-     *
-     * @return
+     * Generate nine random letters
+     * @return JSON in format {"letters": "abcdefghi"}
      */
-    @RequestMapping(value = "/nine/getnine", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    @RequestMapping(value = "/nine/getnine.json", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public Nine getnine() {
         return new Nine();
     }
 
+    @RequestMapping(value = "/nine/getnine.xml", method = RequestMethod.GET, produces = {MediaType.APPLICATION_XML_VALUE})
+    public Nine getnine_xml() {
+        return new Nine();
+    }
+
+    /**
+     *
+     * @return
+     */
     @RequestMapping(value = "/nine/wordlist", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public List<String> wordlist() {
         return WordList.SAOL.getWordList();
@@ -57,4 +66,8 @@ public class NineController {
         return new ResponseEntity<NineDiff>(new NineDiff(input, facit),HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/error")
+    public @ResponseBody String error(){
+        return "error";
+    }
 }
