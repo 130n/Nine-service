@@ -1,5 +1,8 @@
 package nine.pojo;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonValue;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +10,7 @@ import java.util.List;
 /**
  * Created by LeoHen on 2014-10-17.
  */
+@JsonFormat(shape = JsonFormat.Shape.OBJECT)
 public enum WordList {
     SAOL;
     private List<String> wordList = new ArrayList<String>();

@@ -41,8 +41,8 @@ public class NineController {
      * @return
      */
     @RequestMapping(value = "/nine/wordlist", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
-    public List<String> wordlist() {
-        return WordList.SAOL.getWordList();
+    public WordList wordlist() {
+        return WordList.SAOL;
     }
 
     @RequestMapping(value = "/nine/validate", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
