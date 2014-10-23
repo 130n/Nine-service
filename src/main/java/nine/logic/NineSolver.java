@@ -16,7 +16,7 @@ public class NineSolver {
         final String allLetters = mustLetter + possLetters;
 
         for (String word : wordList) {//loop over wordlist
-            if (word.length() > 2 && word.contains(mustLetter)) {
+            if (word.length() > 2 && word.length() < 10 && word.contains(mustLetter)) {
                 StringBuilder sb = new StringBuilder(allLetters);
 
                 for (int i = 0; i < word.length(); i++) {//loop over word

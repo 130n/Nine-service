@@ -12,7 +12,8 @@ public enum WordList {
     private List<String> wordList = new ArrayList<String>();
 
     WordList() {
-        File saol = new File("src/main/resources/saol_2.txt");
+        /*
+        File saol = new File("classpath:saol_2.txt");
         if (!saol.exists() && !saol.canRead()){
             try {
                 throw new FileNotFoundException("bad file path");
@@ -20,9 +21,14 @@ public enum WordList {
                 e.printStackTrace();
             }
         }
+        */
         BufferedReader bufferedReader;
         try {
-            InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(saol), "UTF-8");
+            InputStream in = getClass().getResourceAsStream("/saol_2.txt");
+            InputStreamReader inputStreamReader = new InputStreamReader(
+                    //new FileInputStream("saol_2.txt"),
+                    in,
+                    "UTF-8");
             bufferedReader = new BufferedReader(inputStreamReader);
             String s = bufferedReader.readLine();
 
