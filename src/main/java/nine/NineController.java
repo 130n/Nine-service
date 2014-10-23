@@ -40,12 +40,12 @@ public class NineController {
      *
      * @return
      */
-    @RequestMapping(value = "/nine/wordlist", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
+    @RequestMapping(value = "/nine/wordlist.json", method = RequestMethod.GET, produces = {MediaType.APPLICATION_JSON_VALUE})
     public WordList wordlist() {
         return WordList.SAOL;
     }
 
-    @RequestMapping(value = "/nine/validate", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
+    @RequestMapping(value = "/nine/validate.json", method = RequestMethod.POST, produces = {MediaType.APPLICATION_JSON_VALUE})
     public @ResponseBody ResponseEntity<NineDiff> validate(@RequestBody NineResult input) {
         System.out.println(ReflectionToStringBuilder.toString(input));
         if(input.getNineLetters().length() != 9){

@@ -12,9 +12,9 @@ $('document').ready(function(){
     });
     $('#get-wordlist').click(function(){
         $('textarea#field-wordlist').text("loading...");
-        $.getJSON("http://localhost:8080/nine/wordlist", function(data){
+        $.getJSON("http://localhost:8080/nine/wordlist.json", function(data){
             console.log(data);
-            fetchedWordlist = data;
+            fetchedWordlist = data.wordList;
             $('textarea#field-wordlist').text(data);
             enableSolve();
         });
@@ -56,15 +56,17 @@ $('document').ready(function(){
     });
 
     $('#verify').click(function(){
-        var jsonData = {nineLetters: letters,
-                        result: resultWords
-                        }
+        var jsonData = {}
+        jsonData['nineLetters'] = letters;
+        jsonData['result'] = resultWords;
+
         $.ajax({
-             url: "http://localhost:8080/nine/validate",
+             url: "http://localhost:8080/nine/validate.json",
              type: "post",
              contentType: "application/json",
+             accepts: "application/json",
              data: jsonData,
-             dataType : "json",
+             //dataType : "json",
              success: function(data){
                  console.log(data);
              },

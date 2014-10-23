@@ -9,11 +9,11 @@ returns json: `{ letters: "examplexy" }`
 (maybe a bit TOO random)
 
 
-    GET /nine/wordlist
+    GET /nine/wordlist.json
 
 returns json: `{ wordList: ["a","bb",...] }`
 
-    POST /nine/validate
+    POST /nine/validate.json
     
 data `{letters: "thelettrs", "result": ["words", "matching", "the", "nine"] }`
 
