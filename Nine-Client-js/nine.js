@@ -15,7 +15,7 @@ $('document').ready(function(){
         $.getJSON("http://localhost:8080/nine/wordlist.json", function(data){
             console.log(data);
             fetchedWordlist = data.wordList;
-            $('textarea#field-wordlist').text(data);
+            $('textarea#field-wordlist').text(data.wordList);
             enableSolve();
         });
 
@@ -31,7 +31,7 @@ $('document').ready(function(){
 
         for (var indexWL = 0; indexWL < fetchedWordlist.length ; indexWL++) {//loop over wordlist
             var word = fetchedWordlist[indexWL];
-            console.log(word);
+            //console.log(word);
             if (word.length > 2 && word.indexOf(mustLetter) != -1) {
                 var sb = allLetters;
 
@@ -65,8 +65,7 @@ $('document').ready(function(){
              type: "post",
              contentType: "application/json",
              accepts: "application/json",
-             data: jsonData,
-             //dataType : "json",
+             data: JSON.stringify(jsonData),
              success: function(data){
                  console.log(data);
              },
@@ -75,15 +74,12 @@ $('document').ready(function(){
              }
         });
         /*
-        $.post('http://localhost:8080/nine/validate',
-            jsonData,
-            headers: {
-                             'Accept': 'application/json',
-                             'Content-Type': 'application/json'
-                         },
+        $.post('http://localhost:8080/nine/validate.json',
+            JSON.stringify(jsonData),
             function(data){
                 console.log(data);
-            }
+            },
+            'json'
         );
         */
     });
@@ -104,5 +100,3 @@ $('document').ready(function(){
             }
         }
 });
-
-
